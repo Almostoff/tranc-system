@@ -5,7 +5,6 @@ import (
 	"github.com/streadway/amqp"
 	"log"
 	"strconv"
-	"time"
 	"tranc/server/internal/entity"
 )
 
@@ -89,7 +88,6 @@ func (r *Rabbit) ReadMessage(id int, complete chan bool) (chan *entity.Tranc, er
 	}
 
 	chMsg := make(chan *entity.Tranc)
-	time.Sleep(time.Second * 10)
 	go func() error {
 		for msg := range msgs {
 			q := msg.RoutingKey
