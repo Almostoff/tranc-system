@@ -1,0 +1,7 @@
+database:
+  host: "localhost"
+  port: "54321"
+  user: "admin"
+  pass: "root"
+  dbname: "tranc"
+  driverName: "postgres"

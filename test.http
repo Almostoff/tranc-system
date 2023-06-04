@@ -1,0 +1,23 @@
+POST http://localhost:8181/tranc/1
+content-type: application/json
+
+{
+  "amount": 2
+}
+###
+
+POST http://localhost:8181/tranc/2
+content-type: application/json
+
+{
+"amount": 10
+}
+
+###
+
+POST http://localhost:8181/tranc/3
+content-type: application/json
+
+{
+"amount": 4
+}

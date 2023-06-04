@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: trancTask
+    ports:
+      - "54321:5432"
+    volumes:
+      - ./initdb/db.sql:/docker-entrypoint-initdb.d/db.sql
+      - ./initdb/dbdata:/data/postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: tranc
+      PG_DATA: data/postgres
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: test
+      RABBITMQ_DEFAULT_PASS: pass
